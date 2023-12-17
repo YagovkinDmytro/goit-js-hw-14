@@ -9,14 +9,14 @@ const ingredients = [
 
 /////Option #1/////
 
-function addIngredients(ingredients) {
-  const listOfIngredients = document.querySelector("#ingredients");
-  ingredients.forEach((name) => {
-    const listItem = document.createElement("li");
-    listItem.classList.add("item");
-    listItem.textContent = name;
-    return listOfIngredients.append(listItem);
-  });
-  return listOfIngredients;
-}
-addIngredients(ingredients);
+const listOfIngredients = document.querySelector("#ingredients");
+
+let arrIngr = [];
+const listIngr = ingredients.forEach((name) => {
+  const listItem = document.createElement("li");
+  listItem.classList.add("item");
+  listItem.textContent = name;
+  arrIngr.push(listItem);
+});
+
+listOfIngredients.append(...arrIngr);
